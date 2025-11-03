@@ -22,32 +22,6 @@ del s1.x
 s1.show()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # class Test:
 #     a=10
 #     def __init__(self):
