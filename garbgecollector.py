@@ -4,7 +4,7 @@
 # print(gc.isenabled())
 
 #destructor
-import time as t
+'''import time as t
 class Garbagecoll:
     def __init__(self):
         print("hello")
