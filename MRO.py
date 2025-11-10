@@ -14,7 +14,8 @@ class C(D,F):
     pass
 
 class B(D,E):
-    pass
+    def met(self):
+        print("hrllo")
 
 class A(B,C):
     pass
