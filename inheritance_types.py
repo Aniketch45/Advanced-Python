@@ -1,3 +1,39 @@
+#multiple inheritance
+
+class Person:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    
+    # def show(self):
+    #     print("person name is : ",self.name)
+    #     print("Age is : ",self.age)
+
+class Car:
+    def __init__(self,brand,color):
+        self.brand=brand
+        self.color=color
+
+    def show(self):
+        print("car Brand is : ",self.brand)
+        print("Color is : ",self.color)
+
+class Employee(Person, Car):  #DLR Depth left to right
+    def __init__(self,name,age,brand,color):
+        Person.__init__(self,name,age)
+        Car.__init__(self,brand,color)
+    
+    # def show(self):
+    #     print("child method")
+
+e1=Employee("Aniket",21,"Mahindra","White")
+e1.show()
+
+
+        
+
+
+
 #hierarchical inheritance
 
 # class Root:
