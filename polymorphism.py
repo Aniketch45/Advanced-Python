@@ -1,19 +1,42 @@
-# factorial of a number
+#bucket 
+class Rbi:
+    def rateoi(self,amount,years):
+        self.roi=0.07
+        self.years=years
+        self.amount=amount
+        self.intrest=self.amount*(self.roi*self.years)
+        print("Total amount with Intrest is",self.amount+self.intrest)
+   
 
-def fact(n):
-    a=0
-    b=1
-    f=1
-    if n==1:
-        return
-    else:
+class Sbi:
+    def rateoi(self,amount,years):
+        self.roi=0.07
+        self.years=years
+        self.amount=amount
+        self.intrest=self.amount*(self.roi*self.years)
+        print("Total amount with Intrest is",self.amount+self.intrest)
+
+
+class Icici:
+    def rateoi(self,amount,years):
+        self.roi=0.07
+        self.years=years
+        self.amount=amount
+        self.intrest=self.amount*(self.roi*self.years)
+        print("Total amount with Intrest is",self.amount+self.intrest)
+
+class Axis:
+    def rateoi(self,amount,years):
+        self.roi=0.07
+        self.years=years
+        self.amount=amount
+        self.intrest=self.amount*(self.roi*self.years)
+        print("Total amount with Intrest is",self.amount+self.intrest)
+
+
+amt=int(input("Enter Amount of Loan : "))
+years=int(input("Enter Years : "))
+i=Rbi()
+i.rateoi(amt,years)
+
         
-        for i in range(n):
-            a=b
-            b=a
-            f=b*fact(n-1)
-             
-
-
-a=fact(5)
-print(a)
