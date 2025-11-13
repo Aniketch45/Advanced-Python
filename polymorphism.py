@@ -31,23 +31,30 @@ class Axis:
         self.intrest=self.amount*(self.roi*self.years)
         print("Total amount with Intrest is",self.amount+self.intrest)
 
+
+def method(obj):
+    obj.rateoi()
+
 amt=int(input("Enter Amount of Loan : "))
 years=int(input("Enter Years : "))
-bank=input("Enter Bank Name :")
+bank=input("Enter bank Name:")
+
+
 if bank=="rbi":
-    i=Rbi()
-    i.rateoi(amt,years)
+    i=rateoi(amt,years)
 elif bank=="sbi":
-    i=Sbi()
-    i.rateoi(amt,years)
+    i=rateoi(amt,years)
 elif bank=="icici":
-    i=Icici()
-    i.rateoi(amt,years)
+    i=method(amt,years)
 elif bank=="axis":
-    i=Axis()
-    i.rateoi(amt,years)
+    i=method(amt,years)
 else:
     print("invalid")
+
+method(i)
+
+
+
 
 
   # def call(obj):
@@ -66,5 +73,23 @@ else:
 #     i=l1.pop()
 #     i.rateoi(2000,5)
 
+class Employee:
+    def __init__(self,name,salpday):
+        self.name=name
+        self.salpday=salpday
+
+    def __mul__(self,other):
+        return self.salpday*other.days
+    
+class Timeshift:
+    def __init__(self,name,days):
+        self.name=name
+        self.days=days
+
+e=Employee("Amit",800)
+t=Timeshift("Amit",25)
+print(f"{e.name} salary is",e*t)
+
 
         
+
