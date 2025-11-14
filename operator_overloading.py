@@ -118,7 +118,7 @@ class Book:
 
     def __add__(self,other):
         total=self.pages+other.pages
-        return Book(total)
+        return Book(total)          #return object always
     
     def __str__(self):
         return str(self.pages)

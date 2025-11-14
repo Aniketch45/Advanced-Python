@@ -1,69 +1,62 @@
+#over-riding
 class Bank:
+    rate=0.12
     def __init__(self,name,age,address):
         self.name=name
         self.age=age
         self.address=address
-
-    def show(self):
-        pass
-
+        
+    def show(self,amount,years):
+        print("Name is : ",self.name)
+        print("Age is : ",self.age)
+        print("Address is : ",self.address)
+        amount+=amount*(years*Sbi.rate)
+        print("Loan With intrest is :",amount)
 
 class Rbi(Bank):
-    rate=0.09
-    def __init__(self,name,age,address,amount,years):
-        super().__init__(name,age,address)
-        self.amount=amount
-        self.years=years
-    
-    def show(self):
-        print(self.name)
-        print(self.age)
-        print(self.address)
-        self.amount+=self.amount*(self.years*Rbi.rate)
-        print("Loan With intrest is :",self.amount)
-        
-
+    rate=0.07
+    def show(self,amount,years):
+        print("Name is : ",self.name)
+        print("Age is : ",self.age)
+        print("Address is : ",self.address)
+        amount+=amount*(years*Sbi.rate)
+        print("Loan With intrest is :",amount)
 
 class Icici(Bank):
     rate=0.04
-    def __init__(self,name,age,address,amount,years):
-        super().__init__(name,age,address)
-        self.amount=amount
-        self.years=years
-    
-    def show(self):
-        print(self.name)
-        print(self.age)
-        print(self.address)
-        self.amount+=self.amount*(self.years*Icici.rate)
-        print("Loan With intrest is :",self.amount)
+    def show(self,amount,years):
+        print("Name is : ",self.name)
+        print("Age is : ",self.age)
+        print("Address is : ",self.address)
+        amount+=amount*(years*Sbi.rate)
+        print("Loan With intrest is :",amount)
 
-       
 class Sbi(Bank):
     rate=0.08
-    def __init__(self,name,age,address,amount,years):
-        super().__init__(name,age,address)
-        self.amount=amount
-        self.years=years
-
-    def show(self):
-        print(self.name)
-        print(self.age)
-        print(self.address)
-        self.amount+=self.amount*(self.years*Sbi.rate)
-        print("Loan With intrest is :",self.amount)
-
-    
-
+    def show(self,amount,years):
+        print("Name is : ",self.name)
+        print("Age is : ",self.age)
+        print("Address is : ",self.address)
+        amount+=amount*(years*Sbi.rate)
+        print("Loan With intrest is :",amount)
 
 name=input("Enter your name :")
 age=int(input("Enter your age :"))
 address=input("Enter your address :")
-amount=int(input("Enter loan Amount :"))
-year=int(input("Enter years"))
+amount=float(input("Enter loan Amount :"))
+year=int(input("Enter years :"))
+bank=input("Enter bank name (rbi,sbi,Icici) :").lower()
 
-ban=Sbi(name,age,address,amount,year)
-ban.show()
+if bank=="bank":
+    d=Bank(name,age,address)
+elif bank=="rbi":
+    d=Icici(name,age,address)
+elif bank=="sbi":
+    d=Sbi(name,age,address)
+else:
+    print("Invalid choice")
+
+d.show(amount,year)
     
 
        

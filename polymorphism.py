@@ -1,53 +1,58 @@
 #duck typing 
 class Rbi:
-    def rateoi(self,amount,years):
-        self.roi=0.08
+     def __init__(self,amount,years):
         self.years=years
         self.amount=amount
-        self.intrest=self.amount*(self.roi*self.years)
-        print("Total amount with Intrest is",self.amount+self.intrest)
-   
-class Sbi:
-    def rateoi(self,amount,years):
-        self.roi=0.05
-        self.years=years
-        self.amount=amount
-        self.intrest=self.amount*(self.roi*self.years)
+        
+     def rateoi(self):
+        roi=0.07
+        self.intrest=self.amount*(roi*self.years)
         print("Total amount with Intrest is",self.amount+self.intrest)
 
-class Icici:
-    def rateoi(self,amount,years):
-        self.roi=0.07
+class Sbi:
+     def __init__(self,amount,years):
         self.years=years
         self.amount=amount
-        self.intrest=self.amount*(self.roi*self.years)
+        
+     def rateoi(self):
+        roi=0.07
+        self.intrest=self.amount*(roi*self.years)
+        print("Total amount with Intrest is",self.amount+self.intrest)
+class Icici:
+     def __init__(self,amount,years):
+        self.years=years
+        self.amount=amount
+        
+     def rateoi(self):
+        roi=0.07
+        self.intrest=self.amount*(roi*self.years)
         print("Total amount with Intrest is",self.amount+self.intrest)
 
 class Axis:
-    def rateoi(self,amount,years):
-        self.roi=0.07
+    def __init__(self,amount,years):
         self.years=years
         self.amount=amount
-        self.intrest=self.amount*(self.roi*self.years)
-        print("Total amount with Intrest is",self.amount+self.intrest)
 
+    def rateoi(self):
+        roi=0.07
+        self.intrest=self.amount*(roi*self.years)
+        print("Total amount with Intrest is",self.amount+self.intrest)
 
 def method(obj):
     obj.rateoi()
 
 amt=int(input("Enter Amount of Loan : "))
 years=int(input("Enter Years : "))
-bank=input("Enter bank Name:")
-
+bank=input("Enter bank Name:").lower()
 
 if bank=="rbi":
-    i=rateoi(amt,years)
+    i=Rbi(amt,years)
 elif bank=="sbi":
-    i=rateoi(amt,years)
+    i=Sbi(amt,years)
 elif bank=="icici":
-    i=method(amt,years)
+    i=Icici(amt,years)
 elif bank=="axis":
-    i=method(amt,years)
+    i=Axis(amt,years)
 else:
     print("invalid")
 
@@ -73,22 +78,22 @@ method(i)
 #     i=l1.pop()
 #     i.rateoi(2000,5)
 
-class Employee:
-    def __init__(self,name,salpday):
-        self.name=name
-        self.salpday=salpday
+# class Employee:
+#     def __init__(self,name,salpday):
+#         self.name=name
+#         self.salpday=salpday
 
-    def __mul__(self,other):
-        return self.salpday*other.days
+#     def __mul__(self,other):
+#         return self.salpday*other.days
     
-class Timeshift:
-    def __init__(self,name,days):
-        self.name=name
-        self.days=days
+# class Timeshift:
+#     def __init__(self,name,days):
+#         self.name=name
+#         self.days=days
 
-e=Employee("Amit",800)
-t=Timeshift("Amit",25)
-print(f"{e.name} salary is",e*t)
+# e=Employee("Amit",800)
+# t=Timeshift("Amit",25)
+# print(f"{e.name} salary is",e*t)
 
 
         
