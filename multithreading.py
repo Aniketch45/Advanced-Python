@@ -99,31 +99,31 @@
 # print("Total time is :",endtime-begintime)
 
 #with threading time
-from threading import *
-import time
+# from threading import *
+# import time
 
-class Demo(Thread):
-    def square(self,x):
-         for i in x:
-           print("Square is :",i*2)
-           time.sleep(1)
+# class Demo(Thread):
+#     def square(self,x):
+#          for i in x:
+#            print("Square is :",i*2)
+#            time.sleep(1)
     
-    def double2(self,x):
-       for i in x:
-             print("double is :",i*i)
-             time.sleep(1)
+#     def double2(self,x):
+#        for i in x:
+#              print("double is :",i*i)
+#              time.sleep(1)
     
 
-num=[1,2,3,4,5]
-d=Demo()
-th1=Thread(target=d.square,args=(num,))
-th2=Thread(target=d.double2,args=(num,))
-begintime=time.time()
-th1.start()
-th2.start()
-th1.join()
-th2.join()
-endtime=time.time()
-print("Total time :",endtime-begintime)
+# num=[1,2,3,4,5]
+# d=Demo()
+# th1=Thread(target=d.square,args=(num,))
+# th2=Thread(target=d.double2,args=(num,))
+# begintime=time.time()
+# th1.start()
+# th2.start()
+# th1.join()
+# th2.join()
+# endtime=time.time()
+# print("Total time :",endtime-begintime)
 
 
