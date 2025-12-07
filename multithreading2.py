@@ -21,18 +21,28 @@
 
 from threading import *
 import time
+print("Entered in Threads")
 class Demo():
     def func(self):
-        print("Hello Welcome")
-        time.sleep(2)
+        for i in range(4):
+            print("Hello Welcome")
+            time.sleep(2)
+            print("Thread Name :",current_thread().name)
 
     def func2(self):
-        print("Exiting")
-        time.sleep(2)
+        for i in range(4):
+            print("done")
+            time.sleep(2)
+            print("Thread Name :",current_thread().name)
+
+print("Exiting from main")
+print(current_thread().name)
     
-m2=Mythread()
-# th=Thread(target=m2.display)
-# th.start()
-# m2.start()
+m2=Demo()
+th=Thread(target=m2.func)
+th2=Thread(target=m2.func2)
+th.start()
+th2.start()
+
 
 
