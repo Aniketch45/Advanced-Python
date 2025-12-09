@@ -15,7 +15,7 @@
 import time
 from threading import *
 class Test():
-    print("Enter number keys in 8 seconds")
+    print("Enter number keys in 6 seconds")
     def test(self):
         num=[0]*9
         for i in range(9):
@@ -25,14 +25,17 @@ class Test():
                 print("Wrong value Entered!")
         length=len(num)
         if length==9:
-            print("all keys entered Successfully")
+            print("all keys Pressed Successfully")
         else:
-            print("Failed")
+            print("Failed all keys not Pressed!")
 
 c=Test()
 th1=Thread(target=c.test)
-th1.daemon=False
+th1.daemon=True
 th1.start()
-time.sleep(8)
+time.sleep(6)
 print("Time Ended..")
+
+
+#chatbox
             
