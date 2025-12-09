@@ -44,18 +44,20 @@
 
 
 from threading import *
+import time
 l=Lock()
-li3=[0]*41
-for i in range(41):
-    li3[i]=i
-li=set(li3)
+li3=[1]*41
 
 def booking(n):
     l.acquire()
-    li=n
+    for i in range(1,41):
+        li3[i]=i
+
+    li3.remove(n)
     print("Available Seats are :")
-    for i in li:
+    for i in li3:
         print(i)
+    time.sleep(2)
     l.release()
 
 seat=int(input("Enter Seat number to book :"))
