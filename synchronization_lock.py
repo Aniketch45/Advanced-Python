@@ -45,27 +45,28 @@
 
 from threading import *
 import time
-l=Lock()
-li3=[1]*41
+while True:
+    l=Lock()
+    li3=[1]*41
 
-def booking(n):
-    l.acquire()
-    for i in range(1,41):
-        li3[i]=i
+    def booking(n):
+        l.acquire()
+        for i in range(1,41):
+            li3[i]=i
 
-    li3.remove(n)
-    print("Available Seats are :")
-    for i in li3:
-        print(i)
-    time.sleep(2)
-    l.release()
+        li3.remove(n)
+        print("Available Seats are :")
+        for i in li3:
+            print(i)
+        time.sleep(2)
+        l.release()
 
-seat=int(input("Enter Seat number to book :"))
-th1=Thread(target=booking,args=(seat,))
-th2=Thread(target=booking,args=(seat,))
+    seat=int(input("Enter Seat number to book :"))
+    th1=Thread(target=booking,args=(seat,))
+    th2=Thread(target=booking,args=(seat,))
 
-th1.start()
-th2.start
+    th1.start()
+    th2.start
 
 
 
