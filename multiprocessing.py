@@ -16,7 +16,7 @@ def producer(q):
         print("Message Sent")
 
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     q = Queue(maxsize=10)
     p1 = Process(target=consumer, args=(q,))
     p2 = Process(target=producer, args=(q,))
