@@ -18,10 +18,11 @@ cur=db.cursor()
 # sql2="create table Employee(eid int,ename varchar(20),esal int)"
 # cur.execute(sql2)
 
-sql2="insert into employee (eid,ename,esal) values(101,'Aniket',34242),(103,'viki',49349)"
-cur.execute(sql2)
+# sql2="insert into employee (eid,ename,esal) values(101,'Aniket',34242),(103,'viki',49349)"
+# cur.execute(sql2)
 
-
+query="update esal from employee where eid=103, update esal=40000"
+cur.execute(query)
 db.commit()
 print(cur.rowcount)
 # cur.execute("show tables")
